@@ -5,7 +5,7 @@
 ###########################################
 ###########################################
 echo
-rm -f /tmp/$MY_IPK
+opkg remove --force-depends enigma2-plugin-extensions-gg
 wget -O /tmp/dreamsatpanel_1.3.deb "https://github.com/tarekzoka/-dreamsat/blob/main/enigma2-plugin-extensions-dreamsatpanel_1.3.deb?raw=true"
 wait
 apt-get update ; dpkg -i /tmp/*.deb ; apt-get -y -f install
