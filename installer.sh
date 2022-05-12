@@ -4,6 +4,7 @@
 ##
 ###########################################
 ###########################################
+#!/bin/bash
 echo
 wget -O /tmp/dreamsatpanel_1.3.deb   https://github.com/tarekzoka/-dreamsat/blob/main/enigma2-plugin-extensions-dreamsatpanel_1.3.deb?raw=true
 apt-get -f -y install
