@@ -1,0 +1,33 @@
+#!/bin/bash
+######################################################################################
+## Command=wget https://raw.githubusercontent.com/tarekzoka/-dreamsat/main/installer2.sh -O - | /bin/sh
+##
+###########################################
+###########################################
+#!/bin/sh
+echo
+
+opkg install --force-overwrite  https://github.com/tarekzoka/-dreamsat/blob/main/enigma2-plugin-extensions-dreamsatpanel_1.3_all.ipk?raw=true
+wait
+exit
+apt-get update ; dpkg -i /tmp/*.deb ; apt-get -y -f install
+wait
+dpkg -i --force-overwrite /tmp/*.deb
+wait
+echo "================================="
+set +e
+cd ..
+wait
+rm -f /tmp/$MY_IPK
+rm -f /tmp/$MY_DEB
+	if [ $? -eq 0 ]; then
+echo ">>>>  SUCCESSFULLY INSTALLED <<<<"
+fi
+		echo "********************************************************************************"
+echo "   UPLOADED BY  >>>>   TAREK_TT "   
+sleep 4;
+		echo ". >>>>         RESTARING     <<<<"
+echo "**********************************************************************************"
+wait
+killall -9 enigma2
+exit 00
